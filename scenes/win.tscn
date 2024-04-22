@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bio7xjadx4tdn"]
+
+[ext_resource type="Texture2D" uid="uid://bc01eb2ijgfag" path="res://assets/won.png" id="1_5tskb"]
+
+[node name="win" type="Sprite2D"]
+position = Vector2(480, 270)
+texture = ExtResource("1_5tskb")

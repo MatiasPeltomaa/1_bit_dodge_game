@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cseyk0gh7mr1b"]
+
+[ext_resource type="Script" path="res://scripts/bullet_generator_boss.gd" id="1_occr4"]
+
+[node name="bullet_generator_boss" type="Node2D"]
+position = Vector2(480, 135)
+script = ExtResource("1_occr4")
+
+[node name="boss_phase_1" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.3
+one_shot = true
+autostart = true
+
+[node name="boss_phase_2" type="Timer" parent="."]
+process_callback = 0
+wait_time = 4.6
+one_shot = true
+autostart = true
+
+[node name="boss_phase_3" type="Timer" parent="."]
+process_callback = 0
+wait_time = 6.9
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="boss_phase_1" to="." method="_on_boss_phase_1_timeout"]
+[connection signal="timeout" from="boss_phase_2" to="." method="_on_boss_phase_2_timeout"]
+[connection signal="timeout" from="boss_phase_3" to="." method="_on_boss_phase_3_timeout"]

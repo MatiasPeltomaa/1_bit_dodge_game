@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://sdo2wkv6qhfu"]
+
+[ext_resource type="Texture2D" uid="uid://v3mjebjeoqu8" path="res://assets/space_bar.png" id="1_koo7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sp4vn"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4387p"]
+keycode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_jc4mu"]
+events = [SubResource("InputEventKey_4387p")]
+
+[node name="start_button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sp4vn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sp4vn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sp4vn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sp4vn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sp4vn")
+shortcut = SubResource("Shortcut_jc4mu")
+icon = ExtResource("1_koo7v")
+icon_alignment = 1
+expand_icon = true

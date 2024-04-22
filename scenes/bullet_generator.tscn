@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6f7bwskinpck"]
+
+[ext_resource type="Script" path="res://scripts/bullet_generator.gd" id="1_csjt1"]
+
+[node name="bullet_generator" type="Node2D"]
+position = Vector2(480, 135)
+script = ExtResource("1_csjt1")

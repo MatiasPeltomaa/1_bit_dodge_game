@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2k3gdkevft0a"]
+
+[ext_resource type="Texture2D" uid="uid://c4d1hw5wthcod" path="res://assets/background.png" id="1_ruvfu"]
+[ext_resource type="PackedScene" uid="uid://b6f7bwskinpck" path="res://scenes/bullet_generator.tscn" id="2_ak26u"]
+
+[node name="level_1" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+scale = Vector2(60, 33.75)
+texture = ExtResource("1_ruvfu")
+
+[node name="bullet_generator" parent="." instance=ExtResource("2_ak26u")]

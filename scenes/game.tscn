@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwcwb047koynp"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_13crv"]
+[ext_resource type="PackedScene" uid="uid://cofa0qs8gom0y" path="res://scenes/player.tscn" id="2_7qmu5"]
+[ext_resource type="Texture2D" uid="uid://c4d1hw5wthcod" path="res://assets/background.png" id="3_7bsf0"]
+[ext_resource type="AudioStream" uid="uid://cur75qapuckq4" path="res://assets/boss_music.mp3" id="4_0jnfi"]
+[ext_resource type="AudioStream" uid="uid://ca1hjwhffn6sm" path="res://assets/win_music.mp3" id="5_bw7d1"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_13crv")
+
+[node name="player" parent="." instance=ExtResource("2_7qmu5")]
+position = Vector2(480, 405)
+
+[node name="levels" type="Node2D" parent="."]
+
+[node name="game_background" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+scale = Vector2(60, 33.75)
+texture = ExtResource("3_7bsf0")
+
+[node name="game_camera" type="Camera2D" parent="."]
+position = Vector2(480, 270)
+
+[node name="level_changer_1" type="Timer" parent="."]
+process_callback = 0
+wait_time = 10.0
+autostart = true
+
+[node name="level_changer_2" type="Timer" parent="."]
+process_callback = 0
+wait_time = 20.0
+autostart = true
+
+[node name="level_changer_3" type="Timer" parent="."]
+process_callback = 0
+wait_time = 30.0
+autostart = true
+
+[node name="back_to_menu_changer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 33.0
+autostart = true
+
+[node name="boss_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0jnfi")
+volume_db = -7.3
+autoplay = true
+
+[node name="win_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bw7d1")
+volume_db = -7.3
+
+[connection signal="timeout" from="level_changer_1" to="." method="_on_level_changer_timeout"]
+[connection signal="timeout" from="level_changer_2" to="." method="_on_level_changer_2_timeout"]
+[connection signal="timeout" from="level_changer_3" to="." method="_on_level_changer_3_timeout"]
+[connection signal="timeout" from="back_to_menu_changer" to="." method="_on_back_to_menu_changer_timeout"]
